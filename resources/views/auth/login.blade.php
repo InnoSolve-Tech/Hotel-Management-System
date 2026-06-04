@@ -10,15 +10,15 @@
 </head>
 <body class="hotelio-auth-page">
     <main class="hotelio-login">
-        <section class="hotelio-login__brand" aria-label="Hotelio welcome">
+        <section class="hotelio-login__brand" aria-label="Hot-L welcome">
             <div class="hotelio-login__brand-content">
-                <p class="hotelio-login__eyebrow">Hotel management</p>
-                <h1>Hotelio</h1>
+                <img src="{{ asset('uploads/logo.jpg') }}" alt="Hot-L logo" class="hotelio-login__logo">
+                <p class="hotelio-login__eyebrow">Hotel operations platform</p>
+                <h1>Hot-L</h1>
                 <h2>Welcome back</h2>
                 <p>
-                    Manage rooms, guests, bookings, payments, and hotel operations from one calm workspace.
+                    Run rooms, guests, bookings, and hotel workflows from one streamlined workspace.
                 </p>
-                <img src="{{ asset('img/bg-01.png') }}" alt="Hotel illustration" class="hotelio-login__illustration">
             </div>
         </section>
 
@@ -41,7 +41,7 @@
                             name="email"
                             class="form-control @error('email') is-invalid @enderror"
                             value="{{ old('email') }}"
-                            placeholder="admin@hotelio.test"
+                            placeholder="admin@hot-l.test"
                             autocomplete="email"
                             autofocus
                             required

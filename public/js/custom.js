@@ -1,7 +1,7 @@
-$(document).ready(function(){
-    $('.menu-btn').click(function () {
-        $(this).next('.sub-btn').slideToggle('slow');
-        $('.drop-down').toggleClass("rotated");
+$(document).ready(function () {
+    $(".menu-btn").click(function () {
+        $(this).next(".sub-btn").slideToggle("slow");
+        $(".drop-down").toggleClass("rotated");
     });
 });
 
@@ -9,6 +9,3 @@ $(document).ready(function(){
 //     $(this).next('#sub-btn1').slideToggle('slow');
 //     $('.drop-down').toggleClass('rotate');
 //  });
-
-        
-

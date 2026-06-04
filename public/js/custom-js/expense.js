@@ -1,205 +1,190 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $.noConflict();
-    var ExpenseList = $('#ExpenseList').DataTable({
-        processing : true ,
-        serverSide : true ,
-        colReorder : true ,
-        stateSave  : true ,
-        responsive : true ,
-        dom         : 'Btlftip',
-        buttons:[
+    var ExpenseList = $("#ExpenseList").DataTable({
+        processing: true,
+        serverSide: true,
+        colReorder: true,
+        stateSave: true,
+        responsive: true,
+        dom: "Btlftip",
+        buttons: [
             {
-                extend : 'copy',
-                text : "<button class = 'btn btn-success'><i class='fa fa-copy'></i></button>",
-                titleAttr : 'Copy Items',
+                extend: "copy",
+                text: "<button class = 'btn btn-success'><i class='fa fa-copy'></i></button>",
+                titleAttr: "Copy Items",
             },
             {
-                extend : 'excel',
-                text : "<button class = 'btn btn-primary'><i class ='fa fa-file-excel'></i></button>",
-                titleAttr : 'Export to Excel',
+                extend: "excel",
+                text: "<button class = 'btn btn-primary'><i class ='fa fa-file-excel'></i></button>",
+                titleAttr: "Export to Excel",
                 filename: "Expense_List",
-
             },
             {
-                extend : 'pdf',
-                text : "<button class='btn btn-success'><i class = 'fa fa-file-pdf'></i></button>",
-                titleAttr : 'Export to PDF',
-                filename : 'Expense_list',
+                extend: "pdf",
+                text: "<button class='btn btn-success'><i class = 'fa fa-file-pdf'></i></button>",
+                titleAttr: "Export to PDF",
+                filename: "Expense_list",
             },
             {
-                extend : 'csv',
-                text : '<button class = "btn btn-primary"><i class="fa-solid fa-file-csv"></i></button>',
-                titleAttr : "Export to CSV",
-                filename : 'Expense_list',
+                extend: "csv",
+                text: '<button class = "btn btn-primary"><i class="fa-solid fa-file-csv"></i></button>',
+                titleAttr: "Export to CSV",
+                filename: "Expense_list",
             },
             {
-                text : "<button class = 'btn btn-success'><i class = 'fa fa-file'></i></button>",
-                titleAttr : "Export to JSON",
-                filename : 'Expense_list',
-                action:function(e,dt,button,config){
+                text: "<button class = 'btn btn-success'><i class = 'fa fa-file'></i></button>",
+                titleAttr: "Export to JSON",
+                filename: "Expense_list",
+                action: function (e, dt, button, config) {
                     var data = dt.buttons.exportData();
-                    $.fn.dataTable.fileSave(
-                        new Blob([JSON.stringify(data)])
-                    );
+                    $.fn.dataTable.fileSave(new Blob([JSON.stringify(data)]));
                 },
             },
         ],
 
-        ajax:{
-            type : 'GET',
-            url  : '/expense',
+        ajax: {
+            type: "GET",
+            url: "/expense",
         },
-        columns : [
-            {data : 'CategoryName'},
-            {data : 'Amount'},
-            {data : 'Description'},
-            {data : 'Date'},
-            {data : 'action' , name : 'action'},
+        columns: [
+            { data: "CategoryName" },
+            { data: "Amount" },
+            { data: "Description" },
+            { data: "Date" },
+            { data: "action", name: "action" },
         ],
     });
 
-    $('#AddNewBtn').on('click',function(e){
+    $("#AddNewBtn").on("click", function (e) {
         e.preventDefault();
-        $('#NewExpenseModal').modal('show');
+        $("#NewExpenseModal").modal("show");
     });
-    $('#formResetBtn').on('click',function(e){
+    $("#formResetBtn").on("click", function (e) {
         e.preventDefault();
-        $('#expenseForm')[0].reset();
+        $("#expenseForm")[0].reset();
     });
-    $('#submitBtn').on('click',function(e){
+    $("#submitBtn").on("click", function (e) {
         e.preventDefault();
         $.ajax({
-            type    : 'POST',
-            url     : '/expense',
-            data    : $('#expenseForm').serializeArray(),success:function(data){
-                $('#expenseForm')[0].reset();
-                $('#NewExpenseModal').modal('hide');
-                Swal.fire(
-                  'Success!',
-                  data,
-                  'success'
-                );
+            type: "POST",
+            url: "/expense",
+            data: $("#expenseForm").serializeArray(),
+            success: function (data) {
+                $("#expenseForm")[0].reset();
+                $("#NewExpenseModal").modal("hide");
+                Swal.fire("Success!", data, "success");
                 ExpenseList.draw(false);
             },
-            error:function(date){
-                console.log('Error while added new Expense Item'+data);
+            error: function (date) {
+                console.log("Error while added new Expense Item" + data);
             },
         });
     });
-    $('.ShowBtn').on('click',function(e){
+    $(".ShowBtn").on("click", function (e) {
         e.preventDefault();
         $.ajax({
-            type    :'GET',
-            url     : '/expense',
-            success:function(data){
-                $('#ShowExpenseModal').modal('show');
+            type: "GET",
+            url: "/expense",
+            success: function (data) {
+                $("#ShowExpenseModal").modal("show");
             },
-            error:function(data){
+            error: function (data) {
                 console.log(data);
-            }
+            },
         });
-        
-    })
-    $('body').on('click','#DeleteBtn',function(e) {
+    });
+    $("body").on("click", "#DeleteBtn", function (e) {
         e.preventDefault();
-        var ID = $(this).data('id');
+        var ID = $(this).data("id");
         Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
         }).then((result) => {
-            if(result.isConfirmed){
+            if (result.isConfirmed) {
                 $.ajax({
-                    type    : 'GET',
-                    url     : "/expense/delete/"+ID,
-                    success:function(data){
+                    type: "GET",
+                    url: "/expense/delete/" + ID,
+                    success: function (data) {
                         ExpenseList.draw(false);
                         Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
+                            "Deleted!",
+                            "Your file has been deleted.",
+                            "success",
                         );
                     },
-                    error:function(data){
-                        Swal.fire(
-                            'Error!',
-                            'Delete failed !',
-                            'error'
-                        );
+                    error: function (data) {
+                        Swal.fire("Error!", "Delete failed !", "error");
 
                         console.log(data);
-                    }
+                    },
                 });
             }
         });
     });
 
-    $('body').on('click','#EditBtn',function(e){
+    $("body").on("click", "#EditBtn", function (e) {
         e.preventDefault();
-        var ID = $(this).data('id');
+        var ID = $(this).data("id");
         // console.log(ID);
         $.ajax({
-            type : 'GET',
-            url  : '/expense/'+ID,
-            success:function(data){
+            type: "GET",
+            url: "/expense/" + ID,
+            success: function (data) {
                 // console.log(data);
                 // console.log(data['Amount']);
-                $('#updateExpenseForm')[0].reset();
-                $('#EditId').val(data['id']);
-                $('#EditCategory').val(data['CategoryID']);
-                $('#AmountEdit').val(data['Amount']);
-                $('#EditDescription').val(data['Description']);
-                $('#EditDate').val(data['Date']);
-                $('#EditExpenseModal').modal('show');
+                $("#updateExpenseForm")[0].reset();
+                $("#EditId").val(data["id"]);
+                $("#EditCategory").val(data["CategoryID"]);
+                $("#AmountEdit").val(data["Amount"]);
+                $("#EditDescription").val(data["Description"]);
+                $("#EditDate").val(data["Date"]);
+                $("#EditExpenseModal").modal("show");
             },
-            error:function(data){
+            error: function (data) {
                 console.log(data);
             },
         });
     });
-    $('#updateBtn').on('click',function(e) {
+    $("#updateBtn").on("click", function (e) {
         e.preventDefault();
-        var ID = $('#EditId').val();
-        $.ajax ({
-            type    : 'PATCH',
-            url     : '/expense/'+ID,
-            data    : $('#updateExpenseForm').serializeArray(),
-            success:function(data){
-                $('#EditExpenseModal').modal('hide');
-                $('#updateExpenseForm')[0],reset();
-                Swal.fire(
-                  'Success!',
-                  data,
-                  'success'
-                );
+        var ID = $("#EditId").val();
+        $.ajax({
+            type: "PATCH",
+            url: "/expense/" + ID,
+            data: $("#updateExpenseForm").serializeArray(),
+            success: function (data) {
+                $("#EditExpenseModal").modal("hide");
+                ($("#updateExpenseForm")[0], reset());
+                Swal.fire("Success!", data, "success");
                 ExpenseList.draw(false);
             },
-            error:function(data){
+            error: function (data) {
                 console.log(data);
             },
         });
     });
 
-    $('body').on('click','#ViewBtn', function(e){
+    $("body").on("click", "#ViewBtn", function (e) {
         e.preventDefault();
-        var ID = $(this).data('id');
+        var ID = $(this).data("id");
 
         $.ajax({
-            type : 'GET',
-            url  : '/expense/'+ID,
-            success:function(data){
-                $('#ViewCategoryName').text(data['CategoryName']);
-                $('#ViewAmount').text(data['Amount']);
-                $('#ViewDescription').text(data['Description']);
-                $('#ViewDate').text(data['Date']);
+            type: "GET",
+            url: "/expense/" + ID,
+            success: function (data) {
+                $("#ViewCategoryName").text(data["CategoryName"]);
+                $("#ViewAmount").text(data["Amount"]);
+                $("#ViewDescription").text(data["Description"]);
+                $("#ViewDate").text(data["Date"]);
 
-                $('#ShowExpenseModal').modal('show');
+                $("#ShowExpenseModal").modal("show");
             },
-            error:function(data){
+            error: function (data) {
                 console.log(data);
             },
         });

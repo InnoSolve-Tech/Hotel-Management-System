@@ -425,7 +425,7 @@
         {{-- <div class="banner1">
             <img src="img/hotel/hotel1.jpg" alt="">
             <div class="text_box text_box1">
-                <h1>Welcome To Hotelio</h1>
+                <h1>Welcome To Hot-L</h1>
                 <span></span>
                 <p>Where customer satisfaction is a philosophy</p>
             </div>
@@ -433,7 +433,7 @@
         <div class="banner3">
             <img src="img/hotel/room.jpg" alt="">
             <div class="text_box text_box3">
-                <h1>Welcome To Hotelio</h1>
+                <h1>Welcome To Hot-L</h1>
                 <span></span>
                 <p>Where customer satisfaction is a philosophy</p>
 
@@ -442,7 +442,7 @@
         <div class="banner4">
             <img src="img/hotel/washroom.jpg" alt="">
             <div class="text_box text_box4">
-                <h1>Welcome To Hotelio</h1>
+                <h1>Welcome To Hot-L</h1>
                 <span></span>
                 <p>Where customer satisfaction is a philosophy</p>
             </div>
@@ -455,7 +455,7 @@
                         <div class="container">
                             <div class="d-flex flex-column  pt-5">
                                 <div class="left-headig">
-                                    <h1>Hotelio</h1>
+                                    <h1>Hot-L</h1>
                                 </div>
                                 <div>
                                     <h4>Welcome Back!</h4>

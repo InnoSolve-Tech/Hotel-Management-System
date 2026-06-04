@@ -64,14 +64,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label for="Role" class="form-label col-md-3">Role:</label>
+                                        <label for="role_id" class="form-label col-md-3">Role:</label>
                                         <div class="col-md-8">
-                                            <select name="Role" id="Role" class="form-select">
-                                                <option value="Staff" @selected(old('Role', 'Staff') === 'Staff')>Staff</option>
-                                                <option value="Cashier" @selected(old('Role') === 'Cashier')>Cashier</option>
-                                                <option value="Manager" @selected(old('Role') === 'Manager')>Manager</option>
-                                                <option value="Admin" @selected(old('Role') === 'Admin')>Admin</option>
-                                                <option value="SuperAdmin" @selected(old('Role') === 'SuperAdmin')>Super Admin</option>
+                                            <select name="role_id" id="role_id" class="form-select">
+                                                @foreach ($roles as $role)
+                                                    <option value="{{ $role->id }}" @selected((string) old('role_id', optional($roles->firstWhere('name', 'Staff'))->id) === (string) $role->id)>
+                                                        {{ $role->name }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

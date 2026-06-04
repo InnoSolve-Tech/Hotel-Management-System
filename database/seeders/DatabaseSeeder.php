@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,14 +17,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $superAdminRole = Role::query()->firstWhere('name', 'SuperAdmin');
+
         User::updateOrCreate(
-            ['email' => env('ADMIN_EMAIL', 'admin@hotelio.test')],
+            ['email' => env('ADMIN_EMAIL', 'admin@hot-l.test')],
             [
-                'name' => 'Hotelio Admin',
+                'name' => 'Hot-L Admin',
                 'email_verified_at' => now(),
                 'password' => Hash::make(env('ADMIN_PASSWORD', 'password')),
                 'Status' => 1,
                 'Role' => 'SuperAdmin',
+                'role_id' => $superAdminRole?->id,
             ]
         );
 

@@ -32,7 +32,7 @@ return new class extends Migration
             $table->boolean('TV')->nullable();
             $table->boolean('Wardrobe')->nullable();
             $table->decimal('Price')->nullable();
-            $table->json('AdditionalFeatures')->nullable();
+            $table->longtext('AdditionalFeatures')->nullable();
             $table->boolean('Status')->nullable();
             $table->timestamps();
         });

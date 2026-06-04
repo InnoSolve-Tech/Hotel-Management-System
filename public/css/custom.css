@@ -1,4 +1,3 @@
-
 body::-webkit-scrollbar {
     display: none;
 }
@@ -6,168 +5,175 @@ body::-webkit-scrollbar {
     display: none !important;
 }
 /* data table */
-.dataTables_wrapper{
-	margin-top: 0.8rem !important;
+.dataTables_wrapper {
+    margin-top: 0.8rem !important;
 }
-.dataTables_filter label{
-	display: flex !important;
-	width: 15rem !important;
-	margin-left: .5rem !important;
+.dataTables_filter label {
+    display: flex !important;
+    width: 15rem !important;
+    margin-left: 0.5rem !important;
 }
 
 .dataTables_wrapper .dataTables_filter {
     float: right;
     /* text-align: right; */
-	padding: 0px 20px !important;
-
+    padding: 0px 20px !important;
 }
 .dataTables_wrapper {
-   
-	padding: 0px 20px !important;
-
+    padding: 0px 20px !important;
 }
 form .control-label {
     /* margin-right: 4px !important; */
-     padding-top: 6px !important;
-    margin-bottom: 0 !important; 
+    padding-top: 6px !important;
+    margin-bottom: 0 !important;
     text-align: right !important;
 }
 form .form-label-check {
     text-align: right !important;
 }
-body{
-	background-color: var(--hotelio-color-bg, #ddfcad);
+body {
+    background-color: var(--hotelio-color-bg, #ddfcad);
     overflow-x: hidden;
 }
-*{
-	list-style: none;
-	text-decoration: none;
-	margin: 0;
-	padding: 0;
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
 }
-.tx-center{
-	text-align: center !important;
+.tx-center {
+    text-align: center !important;
 }
 span.material-symbols-outlined.nav-icon {
     font-size: 24px !important;
 }
-.nav-sidebar .nav-item > .nav-link {
+.nav-sidebar:not(.hotelio-sidebar__nav) .nav-item > .nav-link {
     display: inline-flex !important;
     position: relative !important;
 }
-.nav-sidebar .nav-item > .nav-link p {
+.nav-sidebar:not(.hotelio-sidebar__nav) .nav-item > .nav-link p {
     margin-left: 0.5rem !important;
 }
 
-.custom__container{
-	padding:1rem 1.5rem;
-	height: auto;
+.custom__container {
+    padding: 1rem 1.5rem;
+    height: auto;
 }
-.custom__index__table__bg{
-	background-color: var(--hotelio-color-surface, rgba(255, 255, 255, 0.86)) !important;
-	border-radius: 0.5rem;
+.custom__index__table__bg {
+    background-color: var(
+        --hotelio-color-surface,
+        rgba(255, 255, 255, 0.86)
+    ) !important;
+    border-radius: 0.5rem;
 }
-.custom__index__table__bg thead tr th{
-	color: var(--hotelio-color-text, #646165);
-	padding: 1rem !important;
-	
+.custom__index__table__bg thead tr th {
+    color: var(--hotelio-color-text, #646165);
+    padding: 1rem !important;
 }
-.custom__index__table__bg tbody tr td{
-	color: var(--hotelio-color-text-muted, #82846d);
+.custom__index__table__bg tbody tr td {
+    color: var(--hotelio-color-text-muted, #82846d);
 }
-.custom__index__table__bg tbody tr td svg{
-	color: var(--hotelio-color-text-muted, #82846d) !important;
+.custom__index__table__bg tbody tr td svg {
+    color: var(--hotelio-color-text-muted, #82846d) !important;
 }
-.custom__add__heading{
-	color: var(--hotelio-color-text, #646165);
-	padding: 1rem 0rem 0rem 0rem;
+.custom__add__heading {
+    color: var(--hotelio-color-text, #646165);
+    padding: 1rem 0rem 0rem 0rem;
 }
-.custom__add__heading h3{
-	font-size: 2rem;
+.custom__add__heading h3 {
+    font-size: 2rem;
 }
-.custom__add__tb__bg{
-	background-color: var(--hotelio-color-surface, rgba(255, 255, 255, 0.86)) !important;
-	border-radius: 5px;
+.custom__add__tb__bg {
+    background-color: var(
+        --hotelio-color-surface,
+        rgba(255, 255, 255, 0.86)
+    ) !important;
+    border-radius: 5px;
 }
-.form__custom label{
-	color: var(--hotelio-color-text, #646165);
+.form__custom label {
+    color: var(--hotelio-color-text, #646165);
 }
 .form__custom select.form-select {
-	background-color: var(--hotelio-color-surface-muted, rgba(200, 224, 135, 0.34));
-	color: var(--hotelio-color-text, #646165);
-	border: 1px solid var(--hotelio-color-border, rgba(130, 132, 109, 0.34)) !important;
+    background-color: var(
+        --hotelio-color-surface-muted,
+        rgba(200, 224, 135, 0.34)
+    );
+    color: var(--hotelio-color-text, #646165);
+    border: 1px solid var(--hotelio-color-border, rgba(130, 132, 109, 0.34)) !important;
 }
 .form__custom input.form-control {
-	background-color: var(--hotelio-color-surface-muted, rgba(200, 224, 135, 0.34));
-	color: var(--hotelio-color-text, #646165);
-	border: 1px solid var(--hotelio-color-border, rgba(130, 132, 109, 0.34)) !important;
+    background-color: var(
+        --hotelio-color-surface-muted,
+        rgba(200, 224, 135, 0.34)
+    );
+    color: var(--hotelio-color-text, #646165);
+    border: 1px solid var(--hotelio-color-border, rgba(130, 132, 109, 0.34)) !important;
 }
-.form__custom option{
-	color: var(--hotelio-color-text, #646165);
+.form__custom option {
+    color: var(--hotelio-color-text, #646165);
 }
-form .form-label{
-   margin-left: 4px !important;
-  
+form .form-label {
+    margin-left: 4px !important;
 }
 
-.custom__btn__puple{
-	border-radius: 4px;
-	padding: 0.9rem 1.5rem;
-	color: var(--lime-cream, #ddfcad);
-	background-color: var(--hotelio-color-primary, #646165);
-}
-.custom__btn__puple:hover{
-	background: var(--hotelio-gradient-right, linear-gradient(90deg, #ddfcad, #c8e087, #95a472, #82846d, #646165));
-	box-shadow: 0 0 10px 1px rgba(100, 97, 101, 0.28);
+.custom__btn__puple {
     border-radius: 4px;
-	padding: 0.9rem 1.5rem;
-	color: var(--lime-cream, #ddfcad);
+    padding: 0.9rem 1.5rem;
+    color: var(--lime-cream, #ddfcad);
+    background-color: var(--hotelio-color-primary, #646165);
+}
+.custom__btn__puple:hover {
+    background: var(
+        --hotelio-gradient-right,
+        linear-gradient(90deg, #ddfcad, #c8e087, #95a472, #82846d, #646165)
+    );
+    box-shadow: 0 0 10px 1px rgba(100, 97, 101, 0.28);
+    border-radius: 4px;
+    padding: 0.9rem 1.5rem;
+    color: var(--lime-cream, #ddfcad);
 }
 
-.btn__navy__add__invoice{
-	border-radius: 4px;
-	padding: 1rem 4rem;
-	
+.btn__navy__add__invoice {
+    border-radius: 4px;
+    padding: 1rem 4rem;
 }
-.btn__navy__preview__invoice{
-	border-radius: 4px;
-	padding: 0.8rem 2.9rem;
-	border: 2px solid var(--hotelio-color-primary, #646165);
-	color:  var(--hotelio-color-primary, #646165);
-	border-radius: 5px;
-	
+.btn__navy__preview__invoice {
+    border-radius: 4px;
+    padding: 0.8rem 2.9rem;
+    border: 2px solid var(--hotelio-color-primary, #646165);
+    color: var(--hotelio-color-primary, #646165);
+    border-radius: 5px;
 }
-.btn__navy__save__invoice{
-	border-radius: 4px;
-	padding: 0.8rem 3.6rem;
-	border: 2px solid var(--hotelio-color-primary, #646165);
-	color:  var(--hotelio-color-primary, #646165);
-	border-radius: 5px;
+.btn__navy__save__invoice {
+    border-radius: 4px;
+    padding: 0.8rem 3.6rem;
+    border: 2px solid var(--hotelio-color-primary, #646165);
+    color: var(--hotelio-color-primary, #646165);
+    border-radius: 5px;
 }
 /* ............................................................. */
-.pt{
-	padding-top: 100px;
+.pt {
+    padding-top: 100px;
 }
-.container-custom{
-   padding: 40px;
+.container-custom {
+    padding: 40px;
 }
 /* register */
-.img{
-	background-image: url(../img/toa-heftiba-bcLE7reXFLM-unsplash.jpg);
-	height: 584px !important;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-
+.img {
+    background-image: url(../img/toa-heftiba-bcLE7reXFLM-unsplash.jpg);
+    height: 584px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
-.overlay{
-	width: 100%;
-	height: 100%;
-	background-color: rgba(200, 224, 135, .4);
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(200, 224, 135, 0.4);
 }
-.custom-form{
-	background-color: var(--hotelio-color-surface, rgba(255, 255, 255, 0.86));
-	color: var(--hotelio-color-text, #646165);
+.custom-form {
+    background-color: var(--hotelio-color-surface, rgba(255, 255, 255, 0.86));
+    color: var(--hotelio-color-text, #646165);
     padding: 44px;
     height: 630px;
     border-radius: 8px;
@@ -176,19 +182,18 @@ form .form-label{
 /* Sideber */
 .sidebar::-webkit-scrollbar {
     display: none;
-	
 }
-.sidebar{
-	-ms-overflow-style: none !important; 
-    scrollbar-width: none !important; 
+.sidebar {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
 }
-.dashbroad__sidebar__bg
-{
-	background-color: var(--hotelio-color-surface, rgba(255, 255, 255, 0.86)) !important;
-	
+.dashbroad__sidebar__bg {
+    background-color: var(
+        --hotelio-color-surface,
+        rgba(255, 255, 255, 0.86)
+    ) !important;
 }
 /* dashbroad nevber */
-
 
 /* .custom__main__header{
 	border: 0rem !important;
@@ -202,76 +207,78 @@ form .form-label{
     min-height: 1.429rem;
     display: flex;
     justify-content: center;
-   
 }
-.nav__profile__circle
-{
-	/* font-size: calc(11.2px); */
+.nav__profile__circle {
+    /* font-size: calc(11.2px); */
     bottom: 0px;
     right: 0px;
-	position: relative;
-	z-index: 1;
-	margin-bottom: 9px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 9px;
     margin-right: 12px;
 }
 /* footer */
-.custom__main__footer
-{
-	background-color: var(--hotelio-color-surface, rgba(255, 255, 255, 0.86)) !important;
+.custom__main__footer {
+    background-color: var(
+        --hotelio-color-surface,
+        rgba(255, 255, 255, 0.86)
+    ) !important;
 }
-.custom__main__footer i{
-	font-size: large;
+.custom__main__footer i {
+    font-size: large;
 }
 /* side ber menu */
-ul .menu-btn{
-	/* background-color: greenyellow; */
-	padding: 10px 20px;
-	border-radius: 4px;
-	color: var(--hotelio-color-text, #646165);
-	font-size: 1.1rem;
-	transition: .3 ease;
+ul .menu-btn {
+    /* background-color: greenyellow; */
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: var(--hotelio-color-text, #646165);
+    font-size: 1.1rem;
+    transition: 0.3 ease;
 }
-ul .menu-btn i{
-	padding: 0px 6px 0px 2px;
-	font-size: 20px;
+ul .menu-btn i {
+    padding: 0px 6px 0px 2px;
+    font-size: 20px;
 }
-.rotated{
-	transform: rotate(90deg);
-	transition: .3 ease;
+.rotated {
+    transform: rotate(90deg);
+    transition: 0.3 ease;
 }
 
-ul li .drop-down::before 
-{
-	transition: 0.3 ease;
-	font-size: x-large;
-	font-size: 20px !important;
+ul li .drop-down::before {
+    transition: 0.3 ease;
+    font-size: x-large;
+    font-size: 20px !important;
 }
-.custom__toggle
-{
-	background-color: var(--hotelio-color-surface, rgba(255, 255, 255, 0.86)) !important; 
-	display: none;
-	
+.custom__toggle {
+    background-color: var(
+        --hotelio-color-surface,
+        rgba(255, 255, 255, 0.86)
+    ) !important;
+    display: none;
 }
 
 ul .sub-btn {
     padding: 10px 30px;
 }
-.sub-btn li a:active{
-	background: var(--hotelio-gradient-right, linear-gradient(90deg, #ddfcad, #c8e087, #95a472, #82846d, #646165));
-	box-shadow: 0 0 10px 1px rgba(100, 97, 101, 0.28);
+.sub-btn li a:active {
+    background: var(
+        --hotelio-gradient-right,
+        linear-gradient(90deg, #ddfcad, #c8e087, #95a472, #82846d, #646165)
+    );
+    box-shadow: 0 0 10px 1px rgba(100, 97, 101, 0.28);
     border-radius: 4px;
-	padding: 1rem 4rem;
+    padding: 1rem 4rem;
 }
 /* sideber invoice */
-.custom__toggle li{
-	margin-top: 1rem !important;
+.custom__toggle li {
+    margin-top: 1rem !important;
 }
-#custom__offset__invoice
-{
-	margin-left: 50%;
+#custom__offset__invoice {
+    margin-left: 50%;
 }
-#custom__offset__invoice__item{
-	margin-left: 30%;
+#custom__offset__invoice__item {
+    margin-left: 30%;
 }
 
 .table-responsive {
@@ -290,18 +297,3 @@ ul .sub-btn {
 .dt-buttons {
     padding-bottom: 0.8rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

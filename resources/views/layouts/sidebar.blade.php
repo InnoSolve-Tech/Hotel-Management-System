@@ -1,17 +1,11 @@
 <aside class="main-sidebar sidebar-light-primary elevation-4 dashbroad__sidebar__bg">
-    <a href="{{ route('home') }}" class="brand-link">
-        <img src="/uploads/hotelio.png"
-             alt="Hotelio Logo"
-             class="brand-image img-circle elevation-3">
-        <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
-    </a>
-
-    <div class="sidebar custom-sidebar">
-        <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                @include('layouts.menu')
+    <div class="sidebar custom-sidebar pt-3">
+        <nav class="mt-0">
+            <ul class="nav nav-pills nav-sidebar flex-column hotelio-sidebar__nav" data-widget="treeview" role="menu" data-accordion="false">
+                @foreach (\App\Support\NavigationBuilder::forUser(auth()->user(), request()) as $item)
+                    @include('layouts.sidebar-item', ['item' => $item, 'level' => 0])
+                @endforeach
             </ul>
         </nav>
     </div>
-
 </aside>

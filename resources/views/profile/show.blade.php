@@ -12,7 +12,7 @@
                                     <img src="{{URL::asset('/img/profile.png')}}" alt="User_img" class="profile-user-img img-fluid img-circle">
                             @endif
                         </div>
-                        <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
+                        <h3 class="profile-username text-center">{{ Auth::user()->display_name }}</h3>
                         <p class="text-muted text-center">
                             Member since 
                             {{ Auth::user()->created_at->format('D.M. Y') }}

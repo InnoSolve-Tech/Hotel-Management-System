@@ -83,13 +83,11 @@
                                         <label for="Type" class="form-label col-md-3">Roles</label>
                                         <div class="col-md-8">
                                             <div class="input-group">
-                                                <select name="Role" class="form-select">
+                                                <select name="role_id" class="form-select">
                                                     <option value="">Select Role</option>
-                                                    <option value="SuperAdmin">Super Admin</option>
-                                                    <option value="Admin">Admin</option>
-                                                    <option value="Manager">Manager</option>
-                                                    <option value="Cashier">Cashier</option>
-                                                    <option value="Staff">Staff</option>
+                                                    @foreach ($roles as $role)
+                                                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>

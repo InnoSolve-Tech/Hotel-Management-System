@@ -39,7 +39,7 @@ use App\Http\Controllers\Api\V1\ExpenseController as ExpenseControllerV1;
 Api Bank Version Group Route
 _______________________________________________________________________
 */
-Route::group(['prefix' => 'v1'], function(){
+Route::group(['prefix' => 'v1', 'middleware' => ['auth:sanctum', 'permission']], function(){
     Route::resource('/bank', BankControllerV1::class);
 
     Route::resource('/room',RoomControllerV1::class);

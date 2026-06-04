@@ -89,7 +89,7 @@
                         @if(Auth::user()->Photo)
                             <img src="/uploads/{{ Auth::user()->Photo }}" class="user-image img-circle elevation-2" alt="User Photo">
                         @endif
-                        <b class="d-none d-md-inline">{{ Auth::user()->name }}</b>
+                        <b class="d-none d-md-inline">{{ Auth::user()->display_name }}</b>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right mt-3" style="border-radius: 0.5rem">
                         <!-- User image -->

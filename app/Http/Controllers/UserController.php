@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -21,9 +22,11 @@ class UserController extends Controller
         // $Users = User::select('users.*','users.EmployeeID as Employee')
         // ->get();
         if (request()->ajax() || request('grid') == 'ag') {
-            return Datatables::of(User::all())->addColumn('action','layouts.user_action')->make(true);
+            return Datatables::of(User::with('role')->get())->addColumn('action','layouts.user_action')->make(true);
         }
-        return view('user.index');
+        return view('user.index', [
+            'roles' => Role::query()->orderByDesc('is_system')->orderBy('name')->get(),
+        ]);
     }
 
     /**
@@ -34,7 +37,10 @@ class UserController extends Controller
     public function create()
     {
         $Employees = Employee::all();
-        return view('user.create', compact('Employees'));
+        return view('user.create', [
+            'Employees' => $Employees,
+            'roles' => Role::query()->orderByDesc('is_system')->orderBy('name')->get(),
+        ]);
     }
 
     /**
@@ -50,7 +56,7 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'Role' => ['nullable', 'string', 'max:255'],
+            'role_id' => ['nullable', 'exists:roles,id'],
             'Status' => ['nullable', 'boolean'],
             'Photo' => ['nullable', 'image', 'max:2048'],
         ]);
@@ -64,7 +70,7 @@ class UserController extends Controller
 
         $validated['password'] = Hash::make($validated['password']);
         $validated['Status'] = $request->boolean('Status', true);
-        $validated['Role'] = $validated['Role'] ?? 'Staff';
+        $validated['role_id'] = $validated['role_id'] ?? Role::query()->firstWhere('name', 'Staff')?->id;
 
         User::create($validated);
 
@@ -73,8 +79,14 @@ class UserController extends Controller
 
     public function assignRole(Request $request)
     {
-        // return $request->all();
-        return User::find($request->UserID)->update(['Role' => $request->Role]);
+        $validated = $request->validate([
+            'UserID' => ['required', 'exists:users,id'],
+            'role_id' => ['required', 'exists:roles,id'],
+        ]);
+
+        return User::query()
+            ->findOrFail($validated['UserID'])
+            ->update(['role_id' => $validated['role_id']]);
     }
 
     /**

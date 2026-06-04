@@ -5,15 +5,77 @@
     --dusty-olive: #82846dff;
     --dim-grey: #646165ff;
 
-    --hotelio-gradient-top: linear-gradient(0deg, #ddfcadff, #c8e087ff, #95a472ff, #82846dff, #646165ff);
-    --hotelio-gradient-right: linear-gradient(90deg, #ddfcadff, #c8e087ff, #95a472ff, #82846dff, #646165ff);
-    --hotelio-gradient-bottom: linear-gradient(180deg, #ddfcadff, #c8e087ff, #95a472ff, #82846dff, #646165ff);
-    --hotelio-gradient-left: linear-gradient(270deg, #ddfcadff, #c8e087ff, #95a472ff, #82846dff, #646165ff);
-    --hotelio-gradient-top-right: linear-gradient(45deg, #ddfcadff, #c8e087ff, #95a472ff, #82846dff, #646165ff);
-    --hotelio-gradient-bottom-right: linear-gradient(135deg, #ddfcadff, #c8e087ff, #95a472ff, #82846dff, #646165ff);
-    --hotelio-gradient-top-left: linear-gradient(225deg, #ddfcadff, #c8e087ff, #95a472ff, #82846dff, #646165ff);
-    --hotelio-gradient-bottom-left: linear-gradient(315deg, #ddfcadff, #c8e087ff, #95a472ff, #82846dff, #646165ff);
-    --hotelio-gradient-radial: radial-gradient(#ddfcadff, #c8e087ff, #95a472ff, #82846dff, #646165ff);
+    --hotelio-gradient-top: linear-gradient(
+        0deg,
+        #ddfcadff,
+        #c8e087ff,
+        #95a472ff,
+        #82846dff,
+        #646165ff
+    );
+    --hotelio-gradient-right: linear-gradient(
+        90deg,
+        #ddfcadff,
+        #c8e087ff,
+        #95a472ff,
+        #82846dff,
+        #646165ff
+    );
+    --hotelio-gradient-bottom: linear-gradient(
+        180deg,
+        #ddfcadff,
+        #c8e087ff,
+        #95a472ff,
+        #82846dff,
+        #646165ff
+    );
+    --hotelio-gradient-left: linear-gradient(
+        270deg,
+        #ddfcadff,
+        #c8e087ff,
+        #95a472ff,
+        #82846dff,
+        #646165ff
+    );
+    --hotelio-gradient-top-right: linear-gradient(
+        45deg,
+        #ddfcadff,
+        #c8e087ff,
+        #95a472ff,
+        #82846dff,
+        #646165ff
+    );
+    --hotelio-gradient-bottom-right: linear-gradient(
+        135deg,
+        #ddfcadff,
+        #c8e087ff,
+        #95a472ff,
+        #82846dff,
+        #646165ff
+    );
+    --hotelio-gradient-top-left: linear-gradient(
+        225deg,
+        #ddfcadff,
+        #c8e087ff,
+        #95a472ff,
+        #82846dff,
+        #646165ff
+    );
+    --hotelio-gradient-bottom-left: linear-gradient(
+        315deg,
+        #ddfcadff,
+        #c8e087ff,
+        #95a472ff,
+        #82846dff,
+        #646165ff
+    );
+    --hotelio-gradient-radial: radial-gradient(
+        #ddfcadff,
+        #c8e087ff,
+        #95a472ff,
+        #82846dff,
+        #646165ff
+    );
 
     --hotelio-color-bg: var(--lime-cream);
     --hotelio-color-bg-soft: rgba(221, 252, 173, 0.48);
@@ -42,8 +104,16 @@ html,
 body {
     min-height: 100%;
     background:
-        radial-gradient(circle at 12% 10%, rgba(200, 224, 135, 0.42), transparent 24rem),
-        linear-gradient(135deg, rgba(221, 252, 173, 0.88), rgba(200, 224, 135, 0.54));
+        radial-gradient(
+            circle at 12% 10%,
+            rgba(200, 224, 135, 0.42),
+            transparent 24rem
+        ),
+        linear-gradient(
+            135deg,
+            rgba(221, 252, 173, 0.88),
+            rgba(200, 224, 135, 0.54)
+        );
     color: var(--hotelio-color-text-muted);
 }
 
@@ -132,6 +202,420 @@ ul .menu-btn:hover {
 .main-header {
     border-bottom: 1px solid var(--hotelio-color-border);
     box-shadow: 0 0.5rem 1.5rem rgba(100, 97, 101, 0.08);
+}
+
+.hotelio-sidebar__nav {
+    gap: 0.2rem;
+    padding: 0 0.7rem 1.25rem;
+    list-style: none;
+}
+
+.hotelio-sidebar__nav li::marker,
+.hotelio-sidebar__tree li::marker {
+    content: none;
+}
+
+.hotelio-sidebar__nav .nav-item > .nav-link {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 2.5rem;
+    padding: 0.6rem 0.85rem !important;
+    border-radius: 0.85rem;
+    font-size: 0.93rem;
+    font-weight: 600;
+}
+
+.hotelio-sidebar__link--parent {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.hotelio-sidebar__link--child {
+    display: block !important;
+}
+
+.hotelio-sidebar__nav .nav-treeview {
+    margin: 0.18rem 0 0.35rem 0.45rem;
+    padding: 0.12rem 0 0.1rem 0.7rem;
+    border-left: 1px solid rgba(130, 132, 109, 0.28);
+    list-style: none;
+}
+
+.hotelio-sidebar__nav .nav-treeview .nav-link {
+    min-height: 2.05rem;
+    padding-top: 0.45rem !important;
+    padding-bottom: 0.45rem !important;
+    padding-left: 0.7rem !important;
+    padding-right: 0.7rem !important;
+    font-size: 0.87rem;
+    font-weight: 500;
+}
+
+.hotelio-sidebar__nav .nav-link p {
+    margin: 0 !important;
+    display: block;
+    width: 100%;
+    min-width: 0 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left !important;
+}
+
+.hotelio-sidebar__caret {
+    width: 0.55rem;
+    height: 0.55rem;
+    margin-left: auto;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(135deg);
+    transition: transform 0.2s ease;
+}
+
+.hotelio-sidebar__item.menu-open > .nav-link .hotelio-sidebar__caret {
+    transform: rotate(-45deg);
+}
+
+.hotelio-sidebar__item--level-1 > .nav-link {
+    margin-left: 0.55rem;
+    padding-left: 0.75rem !important;
+}
+
+.hotelio-sidebar__item--level-2 > .nav-link {
+    margin-left: 0.9rem;
+    padding-left: 0.7rem !important;
+    font-size: 0.84rem;
+}
+
+.hotelio-sidebar__item--level-3 > .nav-link {
+    margin-left: 1.2rem;
+    padding-left: 0.65rem !important;
+    font-size: 0.82rem;
+}
+
+.hotelio-sidebar__item--level-1 > .nav-link::before,
+.hotelio-sidebar__item--level-2 > .nav-link::before,
+.hotelio-sidebar__item--level-3 > .nav-link::before {
+    display: none;
+    content: none;
+}
+
+.hotelio-permission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+}
+
+.hotelio-permission-grid--compact {
+    margin-top: 1rem;
+}
+
+.hotelio-permission-grid--friendly {
+    margin-top: 1rem;
+}
+
+.hotelio-permission-card {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--hotelio-color-border);
+    border-radius: 0.9rem;
+}
+
+.hotelio-permission-card h3 {
+    margin-bottom: 0.35rem;
+    font-size: 0.95rem;
+}
+
+.hotelio-permission-card--friendly {
+    padding: 0.95rem 0.95rem 1rem;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.hotelio-permission-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.85rem;
+    margin-bottom: 0.9rem;
+}
+
+.hotelio-permission-card__header p {
+    color: var(--hotelio-color-text-muted);
+    font-size: 0.82rem;
+}
+
+.hotelio-permission-card__actions {
+    display: inline-flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.hotelio-permission-actions {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.hotelio-permission-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 3.35rem;
+    margin-bottom: 0;
+    padding: 0.7rem 0.8rem;
+    background: rgba(221, 252, 173, 0.16);
+    border: 1px solid rgba(130, 132, 109, 0.24);
+    border-radius: 0.8rem;
+    color: var(--hotelio-color-text);
+    cursor: pointer;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease;
+}
+
+.hotelio-permission-row:hover {
+    border-color: rgba(130, 132, 109, 0.4);
+    box-shadow: 0 0.45rem 1.1rem rgba(100, 97, 101, 0.08);
+}
+
+.hotelio-permission-row__main {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+}
+
+.hotelio-permission-row__main input {
+    flex-shrink: 0;
+}
+
+.hotelio-permission-row.is-selected {
+    background: rgba(200, 224, 135, 0.36);
+    border-color: rgba(100, 97, 101, 0.22);
+}
+
+.hotelio-permission-row.is-disabled {
+    opacity: 0.62;
+    cursor: not-allowed;
+}
+
+.hotelio-permission-row__title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--hotelio-color-text);
+}
+
+.hotelio-permission-row__hint {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.28rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(100, 97, 101, 0.08);
+    color: var(--hotelio-color-text-muted);
+    font-size: 0.74rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.hotelio-role-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hotelio-role-editor__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid rgba(130, 132, 109, 0.16);
+    border-radius: 0.95rem;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.hotelio-role-editor__search {
+    position: relative;
+    flex: 1 1 18rem;
+}
+
+.hotelio-role-editor__search i {
+    position: absolute;
+    top: 50%;
+    left: 0.9rem;
+    transform: translateY(-50%);
+    color: var(--hotelio-color-text-muted);
+}
+
+.hotelio-role-editor__search .form-control {
+    padding-left: 2.5rem;
+}
+
+.hotelio-role-editor__summary {
+    display: inline-flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.hotelio-role-editor__count {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(200, 224, 135, 0.35);
+    color: var(--hotelio-color-text);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.hotelio-role-editor__count--muted {
+    background: rgba(100, 97, 101, 0.08);
+    color: var(--hotelio-color-text-muted);
+}
+
+.hotelio-role-editor__actions {
+    display: inline-flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.hotelio-role-editor__empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 4rem;
+    border: 1px dashed rgba(130, 132, 109, 0.4);
+    border-radius: 0.9rem;
+    color: var(--hotelio-color-text-muted);
+}
+
+.hotelio-role-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.5rem;
+    padding: 0.2rem 0.55rem;
+    background: rgba(200, 224, 135, 0.42);
+    border-radius: 999px;
+    color: var(--hotelio-color-text);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.hotelio-role-badge--muted {
+    background: rgba(100, 97, 101, 0.08);
+}
+
+.hotelio-role-card {
+    overflow: hidden;
+}
+
+.hotelio-role-builder {
+    display: grid;
+    grid-template-columns: minmax(17rem, 22rem) minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.hotelio-role-builder__sidebar {
+    position: sticky;
+    top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(130, 132, 109, 0.16);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.66);
+}
+
+.hotelio-role-builder__editor {
+    min-width: 0;
+}
+
+.hotelio-role-builder__footer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hotelio-role-tip {
+    padding: 1rem;
+    background: rgba(200, 224, 135, 0.18);
+    border: 1px solid rgba(130, 132, 109, 0.22);
+    border-radius: 0.95rem;
+    color: var(--hotelio-color-text-muted);
+}
+
+.hotelio-role-tip h4 {
+    font-size: 0.95rem;
+}
+
+.hotelio-role-tip--warning {
+    background: rgba(130, 132, 109, 0.12);
+}
+
+.hotelio-page-hero {
+    overflow: hidden;
+}
+
+.hotelio-page-hero__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hotelio-page-hero__meta {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.hotelio-page-hero__stat {
+    min-width: 8rem;
+    padding: 0.85rem 1rem;
+    background: rgba(221, 252, 173, 0.18);
+    border: 1px solid rgba(130, 132, 109, 0.16);
+    border-radius: 0.95rem;
+    color: var(--hotelio-color-text);
+}
+
+.hotelio-page-hero__stat strong {
+    display: block;
+    font-size: 1.15rem;
+}
+
+.hotelio-page-hero__stat span {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--hotelio-color-text-muted);
+    font-size: 0.82rem;
+}
+
+.btn-xs {
+    padding: 0.2rem 0.55rem;
+    font-size: 0.75rem;
+    line-height: 1.25;
+}
+
+.hotelio-role-page .btn-outline-secondary {
+    border-color: rgba(130, 132, 109, 0.3);
+    color: var(--hotelio-color-text-muted);
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.hotelio-role-page .btn-outline-secondary:hover,
+.hotelio-role-page .btn-outline-secondary:focus {
+    border-color: rgba(130, 132, 109, 0.45);
+    color: var(--hotelio-color-text);
+    background: rgba(221, 252, 173, 0.18);
 }
 
 .bg-navy,
@@ -227,6 +711,293 @@ ul .menu-btn:hover {
 
 .card-primary.card-outline {
     border-top-color: var(--hotelio-color-primary);
+}
+
+.hotelio-dashboard__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hotelio-dashboard__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.28rem 0.72rem;
+    border-radius: 999px;
+    background: rgba(200, 224, 135, 0.35);
+    color: var(--hotelio-color-primary-dark);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.hotelio-dashboard__title {
+    margin-bottom: 0.4rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.hotelio-dashboard__subtitle {
+    max-width: 34rem;
+    margin-bottom: 0;
+    color: var(--hotelio-color-text-muted);
+}
+
+.hotelio-dashboard__legend {
+    display: inline-flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.hotelio-room-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.15rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(130, 132, 109, 0.16);
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--hotelio-color-text);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.hotelio-room-pill--free {
+    background: rgba(149, 164, 114, 0.16);
+}
+
+.hotelio-room-pill--booked {
+    background: rgba(130, 132, 109, 0.14);
+}
+
+.hotelio-room-pill--neutral {
+    background: rgba(100, 97, 101, 0.08);
+}
+
+.hotelio-metric-card,
+.hotelio-stat-card {
+    height: 100%;
+    border: 1px solid var(--hotelio-color-border);
+    border-radius: 1.1rem;
+    background: rgba(255, 255, 255, 0.84);
+    box-shadow: 0 1rem 2.2rem rgba(100, 97, 101, 0.09);
+    overflow: hidden;
+}
+
+.hotelio-metric-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    min-height: 9rem;
+    padding: 1rem 1.15rem;
+}
+
+.hotelio-metric-card__icon,
+.hotelio-stat-card__icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+.hotelio-metric-card__icon {
+    width: 4.1rem;
+    height: 4.1rem;
+    font-size: 1.4rem;
+}
+
+.hotelio-metric-card__content,
+.hotelio-stat-card__content {
+    min-width: 0;
+}
+
+.hotelio-metric-card__label,
+.hotelio-stat-card__label {
+    margin-bottom: 0.35rem;
+    color: var(--hotelio-color-text-muted);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.hotelio-metric-card__value,
+.hotelio-stat-card__value {
+    margin-bottom: 0.25rem;
+    color: var(--hotelio-color-text);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.hotelio-metric-card__note,
+.hotelio-stat-card__caption {
+    margin-bottom: 0;
+    color: var(--hotelio-color-text-muted);
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+.hotelio-stat-card__body {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 10rem;
+    padding: 1.2rem 1.2rem 1rem;
+}
+
+.hotelio-stat-card__icon {
+    width: 5rem;
+    height: 5rem;
+    margin-left: auto;
+    background: rgba(100, 97, 101, 0.08);
+    color: var(--hotelio-color-primary);
+    font-size: 2rem;
+}
+
+.hotelio-stat-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.9rem 1.2rem;
+    border-top: 1px solid rgba(130, 132, 109, 0.16);
+    color: var(--hotelio-color-primary) !important;
+    font-weight: 700;
+}
+
+.hotelio-stat-card__footer:hover,
+.hotelio-stat-card__footer:focus {
+    background: rgba(221, 252, 173, 0.18);
+    text-decoration: none;
+}
+
+.hotelio-stat-card__footer--muted {
+    color: var(--hotelio-color-text-muted) !important;
+    cursor: default;
+}
+
+.hotelio-metric-card--sage .hotelio-metric-card__icon,
+.hotelio-stat-card--sage .hotelio-stat-card__icon {
+    background: rgba(149, 164, 114, 0.22);
+    color: var(--palm-leaf);
+}
+
+.hotelio-metric-card--sky .hotelio-metric-card__icon,
+.hotelio-stat-card--sky .hotelio-stat-card__icon {
+    background: rgba(100, 97, 101, 0.08);
+    color: var(--hotelio-color-primary);
+}
+
+.hotelio-metric-card--amber .hotelio-metric-card__icon,
+.hotelio-stat-card--amber .hotelio-stat-card__icon {
+    background: rgba(200, 224, 135, 0.32);
+    color: var(--dusty-olive);
+}
+
+.hotelio-metric-card--mint .hotelio-metric-card__icon,
+.hotelio-stat-card--mint .hotelio-stat-card__icon {
+    background: rgba(149, 164, 114, 0.16);
+    color: var(--hotelio-color-success);
+}
+
+.hotelio-metric-card--slate .hotelio-metric-card__icon,
+.hotelio-stat-card--slate .hotelio-stat-card__icon {
+    background: rgba(130, 132, 109, 0.14);
+    color: var(--hotelio-color-primary-dark);
+}
+
+.hotelio-stat-card--gold .hotelio-stat-card__icon {
+    background: rgba(200, 224, 135, 0.22);
+    color: var(--dusty-olive);
+}
+
+.hotelio-dashboard-card {
+    margin-top: 0.25rem;
+}
+
+.hotelio-dashboard-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hotelio-empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 12rem;
+    border: 1px dashed rgba(130, 132, 109, 0.4);
+    border-radius: 1rem;
+    color: var(--hotelio-color-text-muted);
+    font-size: 1rem;
+}
+
+.hotelio-room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 0.9rem;
+}
+
+.hotelio-room-card {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.95rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(130, 132, 109, 0.18);
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.hotelio-room-card__status {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 999px;
+    flex-shrink: 0;
+}
+
+.hotelio-room-card__content {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.hotelio-room-card__content h6 {
+    font-size: 0.98rem;
+}
+
+.hotelio-room-card__content p {
+    color: var(--hotelio-color-text-muted);
+    font-size: 0.84rem;
+}
+
+.hotelio-room-card__icon {
+    color: var(--hotelio-color-primary);
+    font-size: 1.15rem;
+}
+
+.hotelio-room-card.is-free .hotelio-room-card__status {
+    background: var(--hotelio-color-success);
+}
+
+.hotelio-room-card.is-booked .hotelio-room-card__status {
+    background: var(--hotelio-color-primary-dark);
+}
+
+.hotelio-room-card.is-free {
+    background: rgba(149, 164, 114, 0.08);
+}
+
+.hotelio-room-card.is-booked {
+    background: rgba(130, 132, 109, 0.08);
 }
 
 .info-box,
@@ -375,7 +1146,9 @@ textarea.form-control:focus {
     --ag-control-panel-background-color: rgba(255, 255, 255, 0.92);
     --ag-input-background-color: rgba(221, 252, 173, 0.34);
     --ag-input-border-color: var(--hotelio-color-border);
-    --ag-font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --ag-font-family:
+        "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
     border-radius: var(--hotelio-radius-md);
     overflow: hidden;
 }
@@ -507,8 +1280,16 @@ textarea.form-control:focus {
 .hotelio-auth-page {
     min-height: 100vh;
     background:
-        radial-gradient(circle at 15% 15%, rgba(149, 164, 114, 0.24), transparent 28rem),
-        linear-gradient(135deg, rgba(221, 252, 173, 0.95) 0%, rgba(200, 224, 135, 0.74) 100%);
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(149, 164, 114, 0.24),
+            transparent 28rem
+        ),
+        linear-gradient(
+            135deg,
+            rgba(221, 252, 173, 0.95) 0%,
+            rgba(200, 224, 135, 0.74) 100%
+        );
     color: var(--hotelio-color-text);
     overflow-x: hidden;
 }
@@ -552,8 +1333,16 @@ textarea.form-control:focus {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(155deg, rgba(255, 255, 255, 0.9), rgba(221, 252, 173, 0.72)),
-        radial-gradient(circle at 60% 35%, rgba(149, 164, 114, 0.22), transparent 20rem);
+        linear-gradient(
+            155deg,
+            rgba(255, 255, 255, 0.9),
+            rgba(221, 252, 173, 0.72)
+        ),
+        radial-gradient(
+            circle at 60% 35%,
+            rgba(149, 164, 114, 0.22),
+            transparent 20rem
+        );
 }
 
 .hotelio-login__brand::after {
@@ -573,6 +1362,14 @@ textarea.form-control:focus {
     z-index: 1;
     width: min(100%, 30rem);
     text-align: center;
+}
+
+.hotelio-login__logo {
+    width: min(100%, 7.5rem);
+    height: auto;
+    margin: 0 auto 1.4rem;
+    border-radius: 1.4rem;
+    box-shadow: 0 1.25rem 2.5rem rgba(100, 97, 101, 0.18);
 }
 
 .hotelio-login__eyebrow {
@@ -607,20 +1404,13 @@ textarea.form-control:focus {
     line-height: 1.7;
 }
 
-.hotelio-login__illustration {
-    position: static;
-    display: block;
-    width: min(100%, 24rem);
-    max-width: 100%;
-    height: auto;
-    margin: 2rem auto 0;
-    transform: none;
-    animation: none;
-}
-
 .hotelio-login__panel {
     background:
-        radial-gradient(circle at 75% 25%, rgba(221, 252, 173, 0.78), transparent 24rem),
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(221, 252, 173, 0.78),
+            transparent 24rem
+        ),
         rgba(200, 224, 135, 0.62);
 }
 
@@ -710,6 +1500,21 @@ textarea.form-control:focus {
 }
 
 @media (max-width: 991.98px) {
+    .hotelio-dashboard__header,
+    .hotelio-page-hero__content,
+    .hotelio-dashboard-card__header,
+    .hotelio-role-editor__toolbar {
+        align-items: stretch;
+    }
+
+    .hotelio-role-builder {
+        grid-template-columns: 1fr;
+    }
+
+    .hotelio-role-builder__sidebar {
+        position: static;
+    }
+
     .hotelio-login {
         grid-template-columns: 1fr;
     }
@@ -723,17 +1528,49 @@ textarea.form-control:focus {
         display: none;
     }
 
-    .hotelio-login__illustration {
-        width: min(100%, 15rem);
-        margin-top: 1rem;
-    }
-
     .hotelio-login__panel {
         padding-top: 1rem;
     }
 }
 
 @media (max-width: 575.98px) {
+    .hotelio-dashboard__title {
+        font-size: 1.7rem;
+    }
+
+    .hotelio-metric-card,
+    .hotelio-stat-card__body {
+        padding: 1rem;
+    }
+
+    .hotelio-stat-card__body {
+        min-height: auto;
+    }
+
+    .hotelio-role-editor__actions,
+    .hotelio-permission-card__actions,
+    .hotelio-page-hero__meta {
+        width: 100%;
+    }
+
+    .hotelio-role-editor__summary {
+        width: 100%;
+    }
+
+    .hotelio-role-editor__actions .btn,
+    .hotelio-permission-card__actions .btn {
+        flex: 1 1 auto;
+    }
+
+    .hotelio-permission-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hotelio-permission-row__hint {
+        margin-left: 1.8rem;
+    }
+
     .hotelio-login__brand,
     .hotelio-login__panel {
         padding: 1.25rem;

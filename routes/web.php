@@ -20,6 +20,7 @@ use App\Http\Controllers\TaxSettingController;
 use App\Http\Controllers\BankLedgerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Ramsey\Uuid\Guid\Guid;
 use App\Http\Controllers\SMSController;
@@ -39,7 +40,7 @@ require __DIR__ . '/auth.php';
 
 Route::get('/', [HotelioController::class, 'index']);
 
-Route::group(['middleware' => 'auth'],function(){
+Route::group(['middleware' => ['auth', 'permission']],function(){
     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -253,6 +254,8 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('/user/delete',[UserController::class, 'destroyAll']);
     Route::post('user/assign/role', [UserController::class,'assignRole']);
     Route::resource('user', UserController::class);
+
+    Route::resource('role', RoleController::class)->only(['index', 'store', 'update']);
 
     /*
     |--------------------------------------------------------------------------
